@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="13" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive="true" inactive_on_update="true" label="New" sequence="0" value="-- New choice --"/>
+                <element inactive_on_update="false" label="Requested" sequence="0" value="13"/>
+                <element inactive="true" inactive_on_update="true" label="Assigned" sequence="1" value="Assigned"/>
+                <element inactive_on_update="false" label="Awaiting Approval" sequence="1" value="14"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="15"/>
+                <element inactive="true" inactive_on_update="true" label="Awaiting User" sequence="2" value="Awaiting User"/>
+                <element inactive="true" inactive_on_update="true" label="Awaiting 3rd Party" sequence="3" value="Awaiting 3rd Party"/>
+                <element inactive_on_update="false" label="Awaiting Feedback" sequence="3" value="16"/>
+                <element inactive_on_update="false" label="Closed Complete" sequence="4" value="3"/>
+                <element inactive="true" inactive_on_update="true" label="Scheduled" sequence="4" value="Scheduled"/>
+                <element inactive="true" inactive_on_update="true" label="Resolved" sequence="5" value="Resolved"/>
+                <element inactive_on_update="false" label="Withdrawn" sequence="5" value="8"/>
+                <element inactive="true" inactive_on_update="true" label="Closed" sequence="6" value="Closed"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Priority" max_length="40" name="u_choice_1" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1 - Critical" sequence="0" value="1 - critical"/>
+                <element inactive_on_update="false" label="2 - High" sequence="1" value="2 - high"/>
+                <element inactive_on_update="false" label="3 - Urgent" sequence="2" value="3 - urgent"/>
+                <element inactive_on_update="false" label="4 - Standard" sequence="3" value="4 - standard"/>
+                <element inactive_on_update="false" label="5 - Low" sequence="4" value="5 - low"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="4000" name="u_journal_15" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" label="Additional comments" max_length="4000" name="u_journal_7" type="journal"/>
+        <element label="Work notes" max_length="40" name="u_longint_6" type="longint"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+            </choice>
+        </element>
+        <element label="New Name-Value Pairs" max_length="4000" name="u_simple_name_values_10" type="simple_name_values"/>
+        <element attributes="edge_encryption_enabled=true" label="Opened" max_length="40" name="u_string_12" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Opened by" max_length="40" name="u_string_13" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="255" name="u_string_full_utf8_14" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true" label="Additional Comments" max_length="255" name="u_string_full_utf8_5" type="string_full_utf8"/>
+        <element label="New Translated Text" max_length="40" name="u_translated_text_9" type="translated_text"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal 1" label="What Needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources 1" sequence="0" value="hr1"/>
+                <element inactive_on_update="false" label="Human Resources 2" sequence="1" value="hr2"/>
+                <element inactive_on_update="false" label="Facilities 1" sequence="2" value="facilities 1"/>
+                <element inactive_on_update="false" label="Facilities 2" sequence="3" value="facilities 2"/>
+                <element inactive_on_update="false" label="Legal 1" sequence="4" value="legal 1"/>
+                <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal 2"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Work notes" max_length="4000" name="u_worknotes_11" type="journal"/>
+        <index name="index">
+            <element name="u_requested_for"/>
+        </index>
+    </element>
+</database>
